@@ -7,6 +7,7 @@ import 'package:instagram_clone/state/auth/providers/auth_state_provider.dart';
 import 'package:instagram_clone/state/providers/is_loading_provider.dart';
 import 'package:instagram_clone/views/components/loading/loading_screen.dart';
 import 'package:instagram_clone/views/login/login_view.dart';
+import 'package:instagram_clone/views/main/main_view.dart';
 
 import 'firebase_options.dart';
 
@@ -55,39 +56,6 @@ class MyApp extends StatelessWidget {
             } else {
               return const LoginView();
             }
-          },
-        ));
-  }
-}
-
-// Already logged in
-class MainView extends StatefulWidget {
-  const MainView({
-    super.key,
-  });
-
-  @override
-  State<MainView> createState() => _MainViewState();
-}
-
-// When you're not logged in
-class _MainViewState extends State<MainView> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Main View"),
-        ),
-        body: Consumer(
-          builder: (context, ref, child) {
-            return TextButton(
-              onPressed: () async {
-                await ref.read(authStateProvider.notifier).logOut();
-              },
-              child: const Text(
-                'Logout',
-              ),
-            );
           },
         ));
   }
