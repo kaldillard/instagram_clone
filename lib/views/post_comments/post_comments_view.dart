@@ -55,7 +55,7 @@ class PostCommentsView extends HookConsumerWidget {
             icon: const Icon(
               Icons.send,
             ),
-          ),
+          )
         ],
       ),
       body: SafeArea(
@@ -95,8 +95,8 @@ class PostCommentsView extends HookConsumerWidget {
                     );
                   }
                 },
-                error: (error, StackTrace) {
-                  return ErrorAnimationView();
+                error: (error, stackTrace) {
+                  return const ErrorAnimationView();
                 },
                 loading: () {
                   return const LoadingAnimationView();
