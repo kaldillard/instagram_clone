@@ -8,7 +8,10 @@ import 'package:video_player/video_player.dart';
 class PostVideoView extends HookWidget {
   final Post post;
 
-  const PostVideoView({super.key, required this.post});
+  const PostVideoView({
+    super.key,
+    required this.post,
+  });
 
   @override
   Widget build(BuildContext context) {
