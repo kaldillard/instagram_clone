@@ -36,19 +36,16 @@ class _CreateNewPostViewState extends ConsumerState<CreateNewPostView> {
     final postSettings = ref.watch(postSettingProvider);
     final postController = useTextEditingController();
     final isPostButtonEnabled = useState(false);
-    useEffect(
-      () {
-        void listener() {
-          isPostButtonEnabled.value = postController.text.isNotEmpty;
-        }
+    useEffect(() {
+      void listener() {
+        isPostButtonEnabled.value = postController.text.isNotEmpty;
+      }
 
-        postController.addListener(listener);
-        return () {
-          postController.removeListener(listener);
-        };
-      },
-      [postController],
-    );
+      postController.addListener(listener);
+      return () {
+        postController.removeListener(listener);
+      };
+    }, [postController]);
     return Scaffold(
         appBar: AppBar(
           title: const Text(

@@ -6,7 +6,6 @@ import 'package:instagram_clone/state/likes/models/like_dislike_request.dart';
 import 'package:instagram_clone/state/likes/providers/has_liked_post_provier.dart';
 import 'package:instagram_clone/state/likes/providers/like_dislike_post_provider.dart';
 import 'package:instagram_clone/state/posts/typedefs/post_id.dart';
-import 'package:instagram_clone/views/components/animations/small_error_animation_view.dart';
 
 class LikeButton extends ConsumerWidget {
   final PostId postId;
@@ -48,7 +47,7 @@ class LikeButton extends ConsumerWidget {
         );
       },
       error: (error, stackTrace) {
-        return const SmallErrorAnimationView();
+        return Container();
       },
       loading: () {
         return const Center(

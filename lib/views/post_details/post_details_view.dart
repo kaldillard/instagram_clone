@@ -3,7 +3,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instagram_clone/enums/date_sorting.dart';
 import 'package:instagram_clone/state/comments/models/post_comments_request.dart';
 import 'package:instagram_clone/state/posts/models/post.dart';
-import 'package:instagram_clone/state/posts/providers/can_current_user_delete_post_provider.dart';
 import 'package:instagram_clone/state/posts/providers/delete_post_provider.dart';
 import 'package:instagram_clone/state/posts/providers/specific_post_with_comments_provider.dart';
 import 'package:instagram_clone/views/components/animations/loading_animation_view.dart';
@@ -19,6 +18,8 @@ import 'package:instagram_clone/views/components/post/post_image_or_video_view.d
 import 'package:instagram_clone/views/constants/strings.dart';
 import 'package:instagram_clone/views/post_comments/post_comments_view.dart';
 import 'package:share_plus/share_plus.dart';
+
+import '../../state/posts/providers/can_current-user_delete_post_provider.dart';
 
 class PostDetailsView extends ConsumerStatefulWidget {
   final Post postId;
@@ -116,11 +117,12 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
                 PostImageOrVideoView(
                   post: postWithComments.post,
                 ),
+                // like and comment buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     //like button if post allows liking
-                    if (postWithComments.post.allowComments)
+                    if (postWithComments.post.allowLikes)
                       LikeButton(
                         postId: postId,
                       ),
