@@ -19,7 +19,7 @@ import 'package:instagram_clone/views/constants/strings.dart';
 import 'package:instagram_clone/views/post_comments/post_comments_view.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../state/posts/providers/can_current-user_delete_post_provider.dart';
+import '../../state/posts/providers/can_current_user_delete_post_provider.dart';
 
 class PostDetailsView extends ConsumerStatefulWidget {
   final Post postId;
