@@ -48,7 +48,7 @@ class CommentTile extends ConsumerWidget {
           ),
         );
       },
-      error: (error, StackTrace) {
+      error: (error, stackTrace) {
         return const SmallErrorAnimationView();
       },
       loading: () {
